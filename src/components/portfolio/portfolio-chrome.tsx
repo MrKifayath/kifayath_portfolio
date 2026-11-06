@@ -46,12 +46,13 @@ export function PortfolioChrome({
             onClick={() => handleMobileNav(0)}
             type="button"
           >
-            {/* Geometric Stylized Lime 'K' Mark */}
+            {/* Custom Logo */}
             <span className="brand-logo-mark shrink-0" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 sm:w-5 sm:h-5">
-                <path d="M4 3H8V21H4V3Z" fill="currentColor" />
-                <path d="M8 12.5L16.5 3H21.5L12.5 12.5L22 21H16.8L8 12.5Z" fill="currentColor" />
-              </svg>
+              <img 
+                src="/logo/kifayat_favicon_512.png" 
+                alt="Kifayatullah Mohammad Logo" 
+                className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+              />
             </span>
 
             <span className="brand-divider hidden sm:inline" aria-hidden="true">|</span>

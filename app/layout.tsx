@@ -39,14 +39,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-dark-32x32.png",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/logo/kifayat_favicon_512.png",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo/kifayat_favicon_512.png",
   },
 };
 
