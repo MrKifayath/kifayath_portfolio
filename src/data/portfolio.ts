@@ -11,17 +11,15 @@ export const portfolioData = {
   },
   panels: [
     { id: "landing", number: "01", label: "Overview", navLabel: "HOME" },
-    { id: "career-experience", number: "02", label: "Experience", navLabel: "EXPERIENCE" },
+    { id: "career-experience", number: "02", label: "Experience & Skills", navLabel: "EXPERIENCE" },
     { id: "selected-work", number: "03", label: "Selected Work", navLabel: "PROJECTS" },
-    { id: "skills", number: "04", label: "Skills", navLabel: "SKILLS" },
-    { id: "contact", number: "05", label: "Contact", navLabel: "CONTACT" },
+    { id: "contact", number: "04", label: "Contact", navLabel: "CONTACT" },
   ],
   navigationSections: [
     { id: "landing", number: "01", label: "Overview", navLabel: "HOME", panelIndex: 0 },
     { id: "career-experience", number: "02", label: "Experience", navLabel: "EXPERIENCE", panelIndex: 1 },
     { id: "selected-work", number: "03", label: "Selected Work", navLabel: "PROJECTS", panelIndex: 2 },
-    { id: "skills", number: "04", label: "Skills", navLabel: "SKILLS", panelIndex: 3 },
-    { id: "contact", number: "05", label: "Contact", navLabel: "CONTACT", panelIndex: 4 },
+    { id: "contact", number: "04", label: "Contact", navLabel: "CONTACT", panelIndex: 3 },
   ],
   controls: {
     returnToLanding: "Return to landing section",
@@ -213,7 +211,7 @@ export const portfolioData = {
     ],
   },
   contact: {
-    eyebrow: "05 / Contact",
+    eyebrow: "04 / Contact",
     heading: "Let's build something.",
     intro:
       "I'm looking for full-stack roles and freelance projects, especially where software meets physical hardware.",

@@ -21,15 +21,13 @@ export function PortfolioChrome({
   const navItems = [
     { label: "EXPERIENCE", targetIndex: 1 },
     { label: "PROJECTS", targetIndex: 2 },
-    { label: "SKILLS", targetIndex: 3 },
   ];
 
   const allSections = [
     { label: "01 · Overview (Home)", index: 0 },
     { label: "02 · Work Experience", index: 1 },
     { label: "03 · Selected Projects", index: 2 },
-    { label: "04 · Technical Stack", index: 3 },
-    { label: "05 · Contact", index: 4 },
+    { label: "04 · Contact", index: 3 },
   ];
 
   function handleMobileNav(index: number) {
@@ -80,12 +78,12 @@ export function PortfolioChrome({
         <div className="site-header__right">
           {/* Section Counter indicator */}
           <div
-            aria-label={`Panel ${activePanelIndex + 1} of 5`}
+            aria-label={`Panel ${activePanelIndex + 1} of 4`}
             className="header-panel-counter font-mono text-xs inline-flex items-center gap-1"
           >
             <span className="text-accent font-semibold">0{activePanelIndex + 1}</span>
             <span className="text-muted-foreground/40">/</span>
-            <span className="text-muted-foreground">05</span>
+            <span className="text-muted-foreground">04</span>
           </div>
 
           {/* Desktop Navigation Tabs (>= 768px) */}
@@ -151,7 +149,7 @@ export function PortfolioChrome({
                 NAVIGATION
               </span>
               <span className="font-mono text-xs text-muted-foreground">
-                PANEL 0{activePanelIndex + 1} / 05
+                PANEL 0{activePanelIndex + 1} / 04
               </span>
             </div>
 

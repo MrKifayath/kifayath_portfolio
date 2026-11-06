@@ -1,4 +1,4 @@
-# Kifayatullah Mohammad — Full-Stack Engineer
+# Kifayatullah Mohammad - Full-Stack Engineer
 
 Personal portfolio built with Next.js 16, React 19, Tailwind CSS, and Framer Motion. Features horizontal sliding navigation with physics-based interactions and a dark terminal aesthetic.
 ## Contact

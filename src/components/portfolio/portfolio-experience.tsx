@@ -13,7 +13,6 @@ import { CareerExperienceSection, SelectedWorkSection } from "@/src/components/p
 import { ContactSection } from "@/src/components/portfolio/contact-section";
 import { LandingSection } from "@/src/components/portfolio/landing-section";
 import { PortfolioChrome } from "@/src/components/portfolio/portfolio-chrome";
-import { SkillsSection } from "@/src/components/portfolio/skills-section";
 
 export function PortfolioExperience() {
   const reducedMotion = useReducedMotion() === true;
@@ -173,6 +172,18 @@ export function PortfolioExperience() {
         Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
       if (Math.abs(dominantDelta) < 1.5) return;
 
+      const panelScroller = target?.closest<HTMLElement>("[data-panel-scroll]");
+      if (panelScroller && Math.abs(event.deltaY) >= Math.abs(event.deltaX)) {
+        const maxScroll = panelScroller.scrollHeight - panelScroller.clientHeight;
+        const atTop = panelScroller.scrollTop <= 0;
+        const atBottom = panelScroller.scrollTop >= maxScroll - 1;
+        if ((event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) {
+          event.preventDefault();
+          panelScroller.scrollTop += event.deltaY;
+          return;
+        }
+      }
+
       // Prevent native vertical scroll bounce
       event.preventDefault();
 
@@ -329,10 +340,6 @@ export function PortfolioExperience() {
 
     if (sectionId === "selected-work") {
       return <SelectedWorkSection active={active} />;
-    }
-
-    if (sectionId === "skills") {
-      return <SkillsSection active={active} />;
     }
 
     return <ContactSection active={active} />;

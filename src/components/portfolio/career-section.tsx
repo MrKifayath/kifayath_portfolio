@@ -20,7 +20,7 @@ export function CareerExperienceSection({ active }: CareerSectionProps) {
         <div className="interior-heading-row">
           <div>
             <p className="interior-eyebrow font-mono panel-reveal__item reveal-step-1">
-              01 / EXPERIENCE
+              02 / EXPERIENCE & SKILLS
             </p>
             <h2
               className="interior-heading panel-reveal__item reveal-step-2"
@@ -40,13 +40,7 @@ export function CareerExperienceSection({ active }: CareerSectionProps) {
         <ol aria-label={career.timelineLabel} className="experience-cards-grid">
           {career.experiences.map((experience, index) => (
             <li className="experience-card-item panel-reveal__item" key={experience.id}>
-              <motion.article
-                className="experience-card"
-                whileHover={{
-                  y: -6,
-                  transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
-                }}
-              >
+              <article className="experience-card">
                 {/* Top Accent Strip */}
                 <div className="experience-card__accent-bar" aria-hidden="true" />
 
@@ -110,7 +104,33 @@ export function CareerExperienceSection({ active }: CareerSectionProps) {
                     </a>
                   ))}
                 </div>
-              </motion.article>
+                {(["closexpay-role", "freelance", "engineering-technique"] as string[]).includes(experience.id) && (
+                  <div className="experience-card__skills" aria-label="Skills used">
+                    <p>Skills used</p>
+                    <div className="experience-card__skill-groups">
+                      {(experience.id === "closexpay-role"
+                        ? [
+                            { label: "Frontend", items: ["Next.js"] },
+                            { label: "Backend", items: ["NestJS"] },
+                            { label: "Database", items: ["PostgreSQL", "Redis"] },
+                            { label: "Cloud · AWS", items: ["EC2", "S3", "IAM", "RDS"] },
+                          ]
+                        : experience.id === "freelance"
+                          ? [{ label: "Frontend", items: ["Next.js"] }]
+                          : [
+                              { label: "Engineering Tools", items: ["SolidWorks", "3DEXPERIENCE"] },
+                              { label: "Client Engineering", items: ["Software debugging"] },
+                            ]
+                      ).map((group) => (
+                        <div className="experience-card__skill-group" key={group.label}>
+                          <h4>{group.label}</h4>
+                          <div>{group.items.map((skill) => <span key={skill}>{skill}</span>)}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </article>
             </li>
           ))}
         </ol>
