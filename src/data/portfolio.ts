@@ -107,7 +107,7 @@ export const portfolioData = {
     ],
     selectedWorkEyebrow: "Career / Selected work",
     selectedWorkHeading: "Selected work",
-    selectedWorkIntro: "Five projects across payment products, fintech marketing and physical engineering.",
+    selectedWorkIntro: "Six projects across payment products, fintech marketing and physical engineering.",
     projectFields: {
       context: "Context",
       built: "What I built",
@@ -135,6 +135,16 @@ export const portfolioData = {
           "Built invoice creation, PDF generation, customizable templates, and recurring payments.",
         hard: "",
         outcome: "Now used by 30+ merchants.",
+        links: [] as PortfolioLink[],
+      },
+      {
+        id: "finmatrix-dashboard",
+        title: "Finmatrix dashboard",
+        descriptor: "Transactions · Settlements · Payouts · Invoices",
+        context: "Fully functional dashboard for the Finmatrix payment platform, built from scratch in about one month. Owned both the frontend and the backend.",
+        built: "Built the transactions, settlements and payouts along with fully integrated invoices. The Next.js frontend consumes NestJS REST APIs. Implemented authentication and role-based access control.",
+        hard: "",
+        outcome: "",
         links: [] as PortfolioLink[],
       },
       {

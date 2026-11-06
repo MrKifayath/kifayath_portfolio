@@ -37,6 +37,10 @@ const invoicingScreenshots = [
   { src: "/images/invoicing/invoice%20e%3Ddetails.png", caption: "Invoice details" },
   { src: "/images/invoicing/invoices%20recurring.png", caption: "Recurring invoices" },
 ];
+const finmatrixScreenshots = [
+  { src: "/images/finmatrix/finmtarix.png", caption: "Finmatrix dashboard" },
+  { src: "/images/finmatrix/finmatrix%202.png", caption: "Finmatrix dashboard" },
+];
 
 export function ProjectDetailsDialog({ project, onClose }: { project: Project; onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -45,8 +49,9 @@ export function ProjectDetailsDialog({ project, onClose }: { project: Project; o
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const isCloseXPay = project.id === "closexpay-gateway";
   const isInvoicing = project.id === "invoicing-platform";
+  const isFinmatrix = project.id === "finmatrix-dashboard";
   const isRupeeFlow = project.id === "rupeeflow-site";
-  const projectScreenshots = isCloseXPay ? screenshots : isInvoicing ? invoicingScreenshots : [];
+  const projectScreenshots = isCloseXPay ? screenshots : isInvoicing ? invoicingScreenshots : isFinmatrix ? finmatrixScreenshots : [];
   const sections = isCloseXPay ? closeXPaySections : invoicingSections;
 
   useEffect(() => {
@@ -80,6 +85,7 @@ export function ProjectDetailsDialog({ project, onClose }: { project: Project; o
             {isCloseXPay ? <p className="project-details__summary">Payments, wallet, payouts and invoicing for merchants.</p> : null}
             {isCloseXPay ? <p className="project-details__summary">Worked across multiple dashboards, including PayBolt and FinMatrix.</p> : null}
             {isInvoicing ? <p className="project-details__summary">GST-compliant invoicing with PDF generation, email delivery and payment tracking.</p> : null}
+            {isFinmatrix ? <p className="project-details__summary">Fully functional dashboard for the Finmatrix payment platform, built from scratch in about one month. Owned both the frontend and the backend.</p> : null}
             {isRupeeFlow ? <p className="project-details__summary">Marketing site for RupeeFlow, a fintech platform for payments, payouts and business credit.</p> : null}
             {isRupeeFlow ? <p className="project-details__meta">Freelance · February 2026 · About one month</p> : null}
           </div>
@@ -107,6 +113,16 @@ export function ProjectDetailsDialog({ project, onClose }: { project: Project; o
               {sections.slice(3).map((section) => <FeatureGroup key={section.title} section={section} />)}
             </div>
             <ScreenshotPlaceholder image={projectScreenshots[2]} index={2} loaded={loadedImages.includes(2)} onLoad={() => setLoadedImages((items) => [...items, 2])} onOpen={() => showImage(2)} />
+          </>
+        ) : isFinmatrix ? (
+          <>
+            <div className="project-details__tags" aria-label="Technology stack">{["Next.js", "NestJS", "PostgreSQL", "AWS"].map((tag) => <span key={tag}>{tag}</span>)}</div>
+            <div className="project-details__sections project-details__sections--generic">
+              <FeatureGroup section={{ title: "What I built", bullets: ["Built the full dashboard from scratch, frontend and backend.", "Built the Transactions, settlements and payouts along with fully integrated invoices.", "Next.js frontend consuming NestJS REST APIs.", "Authentication and role-based access control."] }} />
+            </div>
+            <div className="project-details__screenshots-row project-details__screenshots-row--finmatrix">
+              {projectScreenshots.map((image, index) => <ScreenshotPlaceholder key={image.src} image={image} index={index} loaded={loadedImages.includes(index)} onLoad={() => setLoadedImages((items) => [...items, index])} onOpen={() => showImage(index)} showDemoBadge={false} />)}
+            </div>
           </>
         ) : isRupeeFlow ? (
           <>
@@ -141,11 +157,11 @@ function FeatureGroup({ section }: { section: { title: string; bullets: string[]
   return <section className="project-feature-group"><h3>{section.title}</h3><ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul></section>;
 }
 
-function ScreenshotPlaceholder({ image, index, loaded, onLoad, onOpen }: { image: (typeof screenshots)[number]; index: number; loaded: boolean; onLoad: () => void; onOpen: () => void }) {
+function ScreenshotPlaceholder({ image, index, loaded, onLoad, onOpen, showDemoBadge = true }: { image: (typeof screenshots)[number]; index: number; loaded: boolean; onLoad: () => void; onOpen: () => void; showDemoBadge?: boolean }) {
   return (
     <figure className="project-screenshot">
       <button aria-label={`Open screenshot: ${image.caption}`} className="project-screenshot__image" onClick={onOpen} type="button">
-        <span className="project-screenshot__badge">Demo data</span>
+        {showDemoBadge ? <span className="project-screenshot__badge">Demo data</span> : null}
         {loaded ? null : <span className="project-screenshot__placeholder">Screenshot {index + 1} placeholder</span>}
         {/* Keep a missing future upload as a styled placeholder until its image is added. */}
         <img alt="" aria-hidden="true" onError={(event) => event.currentTarget.remove()} onLoad={onLoad} src={image.src} />
