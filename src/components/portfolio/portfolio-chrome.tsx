@@ -25,7 +25,7 @@ export function PortfolioChrome({
 
   const allSections = [
     { label: "01 · Overview (Home)", index: 0 },
-    { label: "02 · Work Experience", index: 1 },
+    { label: "02 · Work Experience & Stack", index: 1 },
     { label: "03 · Selected Projects", index: 2 },
     { label: "04 · Contact", index: 3 },
   ];
@@ -108,7 +108,7 @@ export function PortfolioChrome({
           {/* Primary Contact CTA Button */}
           <button
             className="nav-contact-cta hidden sm:inline-flex"
-            onClick={() => onNavigate(4)}
+            onClick={() => onNavigate(3)}
             type="button"
           >
             <span>CONTACT</span>
