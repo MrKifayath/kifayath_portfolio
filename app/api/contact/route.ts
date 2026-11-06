@@ -1,7 +1,8 @@
 import { Resend } from "resend";
 import { portfolioData } from "@/src/data/portfolio";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 const maxRequestBytes = 8_192;
 const maxNameLength = 80;
 const maxEmailLength = 254;
@@ -72,27 +73,35 @@ export async function POST(request: Request) {
     return Response.json({ errors }, { status: 422 });
   }
 
-  // Send email via Resend
+  // Send email via Resend if configured, else mock delivery
   try {
-    const emailTo = process.env.EMAIL_TO || "kifayatullah.mhmd@gmail.com";
-    const emailFrom = process.env.EMAIL_FROM || "onboarding@resend.dev";
+    if (resend) {
+      const emailTo = process.env.EMAIL_TO || "kifayatullah.mhmd@gmail.com";
+      const emailFrom = process.env.EMAIL_FROM || "onboarding@resend.dev";
 
-    await resend.emails.send({
-      from: emailFrom,
-      to: emailTo,
-      replyTo: email,
-      subject: `Portfolio Contact: ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
-      `,
-      text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    });
+      await resend.emails.send({
+        from: emailFrom,
+        to: emailTo,
+        replyTo: email,
+        subject: `Portfolio Contact: ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, "<br>")}</p>
+        `,
+        text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      });
+    } else {
+      console.log("[AI Studio] Mock contact form submission received (RESEND_API_KEY not configured):", {
+        name,
+        email,
+        message,
+      });
+    }
 
-    return Response.json({ ok: true, deliveryEnabled: true }, { status: 200 });
+    return Response.json({ ok: true, deliveryEnabled: Boolean(resend) }, { status: 200 });
   } catch (error) {
     console.error("Failed to send email:", error);
     return Response.json(

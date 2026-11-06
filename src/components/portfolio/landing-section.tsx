@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Layers } from "lucide-react";
+import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import { portfolioData } from "@/src/data/portfolio";
 import { PanelReveal } from "@/src/components/portfolio/panel-reveal";
 
@@ -36,20 +36,25 @@ export function LandingSection({ active, onNavigate }: LandingSectionProps) {
           {/* Organic uneven dark faded shield behind the text */}
           <div className="hero-text-backdrop" aria-hidden="true" />
 
+          {/* Headline breaking cleanly into two even lines:
+              Line 1: "I build full-stack products"
+              Line 2: "that work end to end." */}
           <h1 className="hero-main-title panel-reveal__item reveal-step-1">
-            <span className="block">{landing.headlineLine1}</span>
-            <span className="block mt-1 sm:mt-2">
+            <span className="hero-headline-line hero-headline-line--1">
+              {landing.headlineLine1}
+            </span>
+            <span className="hero-headline-line hero-headline-line--2">
               {landing.headlineLine2}{" "}
               <em className="hero-accent-text">{landing.headlineAccent}</em>
             </span>
           </h1>
 
+          {/* Subheading: clean, no link underline on Next.js */}
           <p className="hero-description panel-reveal__item reveal-step-2">
-            SDE-1 with a mechanical engineering background. I&apos;ve shipped dashboards,
-            APIs and an invoicing platform for 30+ merchants, using{" "}
-            <span className="hero-subtext-highlight">Next.js</span>, NestJS, PostgreSQL and AWS.
+            {landing.intro}
           </p>
 
+          {/* CTA Buttons: View Projects, My Experience, and consistent Download Resume button */}
           <div className="hero-cta-group panel-reveal__item reveal-step-3">
             <button
               className="hero-btn-primary"
@@ -67,24 +72,50 @@ export function LandingSection({ active, onNavigate }: LandingSectionProps) {
             >
               <span>{landing.secondaryAction}</span>
             </button>
+
+            <a
+              className="hero-btn-secondary hero-btn-resume"
+              download="Kifayatullah_Mohammad_Resume.pdf"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Download className="w-4 h-4 mr-1.5 stroke-[2.2] text-accent" aria-hidden="true" />
+              <span>{landing.resumeAction}</span>
+            </a>
           </div>
         </div>
       </PanelReveal>
 
-      {/* 3. Bottom Status Ticker Bar (Strictly 3 equal columns, center is 50% dead center) */}
-      <div className="landing-bottom-ticker" aria-label="Credentials & Availability">
+      {/* Minimalist Bottom Scroll Cue */}
+      <div className="landing-bottom-cue">
+        <button
+          className="minimal-scroll-cue"
+          onClick={() => onNavigate(1)}
+          type="button"
+          aria-label="Scroll to next section: Experience"
+        >
+          <span className="minimal-scroll-cue__label">SCROLL</span>
+          <span className="minimal-scroll-cue__arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      {/* 3. Bottom Status Ribbon: Left = Bengaluru, India | Center = Empty | Right = OPEN TO WORK */}
+      <div className="landing-bottom-ticker" aria-label="Location & Availability">
         <div className="ticker-cell ticker-cell--left">
-          <Layers className="w-4 h-4 text-accent/80 shrink-0" aria-hidden="true" />
-          <span className="ticker-text font-mono">{landing.ticker.experience}</span>
+          <MapPin className="w-4 h-4 text-accent/90 shrink-0" aria-hidden="true" />
+          <span className="ticker-text font-mono font-medium tracking-wider">
+            {landing.ticker.location}
+          </span>
         </div>
 
-        <div className="ticker-cell ticker-cell--center">
-          <span className="ticker-text font-mono">{landing.ticker.stack}</span>
+        <div className="ticker-cell ticker-cell--center" aria-hidden="true">
+          {/* Empty center as requested */}
         </div>
 
         <div className="ticker-cell ticker-cell--right">
           <span className="pulse-dot" aria-hidden="true" />
-          <span className="ticker-text font-mono text-foreground font-semibold">
+          <span className="ticker-text font-mono text-foreground font-semibold tracking-wider">
             {landing.ticker.status}
           </span>
         </div>

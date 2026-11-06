@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ExternalLink } from "lucide-react";
 import { portfolioData } from "@/src/data/portfolio";
-import { InvoiceDemoDialog } from "@/src/components/portfolio/invoice-demo-dialog";
 import { PanelReveal } from "@/src/components/portfolio/panel-reveal";
 
 type CareerSectionProps = {
@@ -96,7 +95,7 @@ export function CareerExperienceSection({ active }: CareerSectionProps) {
                   </ul>
                 ) : null}
 
-                {/* Footer with links and interactive tools */}
+                {/* Footer with links */}
                 <div className="experience-card__footer">
                   {experience.links.map((link) => (
                     <a
@@ -110,11 +109,6 @@ export function CareerExperienceSection({ active }: CareerSectionProps) {
                       <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </a>
                   ))}
-                  {experience.id === "closexpay-role" ? (
-                    <div className="mt-2">
-                      <InvoiceDemoDialog />
-                    </div>
-                  ) : null}
                 </div>
               </motion.article>
             </li>
@@ -242,7 +236,6 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
                               <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                             </a>
                           ))}
-                          {project.id === "invoicing-platform" ? <InvoiceDemoDialog /> : null}
                         </div>
                       </div>
                     </motion.div>
