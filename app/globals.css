@@ -5305,16 +5305,47 @@ button:hover:not(:disabled) > svg {
   .experience-card-item:nth-child(3):has(.experience-card__skills):hover .experience-card,
   .experience-card-item:nth-child(3):has(.experience-card__skills):focus-within .experience-card { left: 0; }
 }
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
+  .experience-cards-grid:has(.experience-card-item:hover) .experience-card-item:not(:hover) .experience-card,
+  .experience-cards-grid:has(.experience-card-item:focus-within) .experience-card-item:not(:focus-within) .experience-card {
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
   .experience-card-item { min-height: 0; }
-  .experience-card { position: relative; inset: auto; height: 100%; min-height: 0; }
-  .experience-card__skills { max-height: 260px; opacity: 1; margin-top: 16px; }
-  .experience-card__skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .experience-card { position: relative; inset: auto; width: 100%; height: auto; min-height: 0; }
+  .experience-card__skills,
+  .experience-card-item:hover .experience-card__skills,
+  .experience-card-item:focus-within .experience-card__skills {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    margin-top: 16px;
+  }
   .experience-card-item:has(.experience-card__skills):hover .experience-card,
   .experience-card-item:has(.experience-card__skills):focus-within .experience-card {
-    position: relative; width: 100%; left: auto; height: 100%; min-height: 0; transform: none;
+    position: relative;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto;
+    min-height: 0;
+    transform: none !important;
   }
+  .experience-card-item { overflow: visible; }
+  .experience-card__skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .experience-cards-grid { grid-template-columns: 1fr !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .experience-card, .experience-card__skills { transition: none !important; }
+}
+
+@media (max-width: 767px) {
+  .contact-scroll { align-items: flex-start; }
+  .contact-content { flex: 0 0 auto; margin: 0 auto; }
 }
