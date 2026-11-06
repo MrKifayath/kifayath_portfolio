@@ -107,7 +107,7 @@ export const portfolioData = {
     ],
     selectedWorkEyebrow: "Career / Selected work",
     selectedWorkHeading: "Selected work",
-    selectedWorkIntro: "Four projects across payment products and physical engineering.",
+    selectedWorkIntro: "Five projects across payment products, fintech marketing and physical engineering.",
     projectFields: {
       context: "Context",
       built: "What I built",
@@ -118,7 +118,7 @@ export const portfolioData = {
       {
         id: "closexpay-gateway",
         title: "CloseXPay payment gateway",
-        descriptor: "Wallet · Admin · Next.js · NestJS",
+        descriptor: "Wallet · Admin dashboard · Settlements",
         context: "Payment gateway work at CloseXPay.",
         built:
           "Built the Wallet system and Admin dashboard in Next.js, backed by NestJS APIs I wrote, for a gateway handling high-value transaction volumes.",
@@ -136,6 +136,16 @@ export const portfolioData = {
         hard: "",
         outcome: "Now used by 30+ merchants.",
         links: [] as PortfolioLink[],
+      },
+      {
+        id: "rupeeflow-site",
+        title: "RupeeFlow marketing site",
+        descriptor: "Freelance · February 2026 · Next.js",
+        context: "Marketing site for RupeeFlow, a fintech platform for payments, payouts and business credit.",
+        built: "Co-built the full multi-page site, working across every page in the navigation alongside one other developer.",
+        hard: "",
+        outcome: "",
+        links: [{ label: "Visit rupeeflow.co", href: "https://rupeeflow.co" }],
       },
       {
         id: "shift",

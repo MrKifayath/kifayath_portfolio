@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown, ExternalLink } from "lucide-react";
 import { portfolioData } from "@/src/data/portfolio";
 import { PanelReveal } from "@/src/components/portfolio/panel-reveal";
+import { ProjectDetailsDialog } from "@/src/components/portfolio/project-details-dialog";
 
 type CareerSectionProps = {
   active: boolean;
@@ -143,6 +144,7 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
   const career = portfolioData.career;
   const fields = career.projectFields;
   const [openProjectId, setOpenProjectId] = useState<string | null>("closexpay-gateway");
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   return (
     <div className="panel-scroll career-scroll selected-work-scroll" data-panel-scroll>
@@ -219,6 +221,9 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
                       />
                     </div>
                   </button>
+                  <button className="project-view-details" onClick={() => setSelectedProjectId(project.id)} type="button">
+                    View details <ArrowUpRight aria-hidden="true" />
+                  </button>
                 </div>
 
                 <AnimatePresence initial={false}>
@@ -265,6 +270,12 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
             );
           })}
         </div>
+        {selectedProjectId ? (
+          <ProjectDetailsDialog
+            onClose={() => setSelectedProjectId(null)}
+            project={career.projects.find((project) => project.id === selectedProjectId)!}
+          />
+        ) : null}
       </PanelReveal>
     </div>
   );
