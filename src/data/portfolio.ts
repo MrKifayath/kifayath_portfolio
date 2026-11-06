@@ -218,9 +218,9 @@ export const portfolioData = {
       emailPlaceholder: "you@example.com",
       messagePlaceholder: "What would you like to build?",
       submitLabel: "Send message",
-      sendingLabel: "Checking message",
-      successHeading: "Message checked",
-      successMessage: "Your message passed validation.",
+      sendingLabel: "Sending message",
+      successHeading: "Message sent",
+      successMessage: "Thanks for reaching out. I’ll be in touch soon.",
       failureMessage: "Something went wrong. Please try again.",
       sendAnother: "Write another message",
       errors: {
