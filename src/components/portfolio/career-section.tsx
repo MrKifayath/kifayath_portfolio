@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown, ExternalLink } from "lucide-react";
@@ -9,6 +10,13 @@ import { ProjectDetailsDialog } from "@/src/components/portfolio/project-details
 
 type CareerSectionProps = {
   active: boolean;
+};
+
+const projectThumbnails: Record<string, string> = {
+  "closexpay-gateway": "/images/gateway/closexpay.png",
+  "invoicing-platform": "/images/invoicing/invoices%20ss.png",
+  "finmatrix-dashboard": "/images/finmatrix/finmtarix.png",
+  "rupeeflow-site": "/images/rupeeflow/Screenshot%202026-11-07%20214512.png",
 };
 
 export function CareerExperienceSection({ active }: CareerSectionProps) {
@@ -174,6 +182,7 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
           {career.projects.map((project, index) => {
             const isExpanded = openProjectId === project.id;
             const detailsId = `project-details-${project.id}`;
+            const thumbnail = projectThumbnails[project.id];
 
             const details = [
               { label: fields.context, value: project.context },
@@ -191,6 +200,16 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
                 className={`work-card panel-reveal__item ${isExpanded ? "is-active" : ""}`}
                 key={project.id}
               >
+                {thumbnail ? (
+                  <Image
+                    alt={`${project.title} screenshot preview`}
+                    className="work-card__thumbnail"
+                    height={360}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    src={thumbnail}
+                    width={640}
+                  />
+                ) : null}
                 <div className="work-card__header">
                   <button
                     aria-controls={detailsId}
@@ -221,9 +240,15 @@ export function SelectedWorkSection({ active }: CareerSectionProps) {
                       />
                     </div>
                   </button>
-                  <button className="project-view-details" onClick={() => setSelectedProjectId(project.id)} type="button">
-                    View details <ArrowUpRight aria-hidden="true" />
-                  </button>
+                  {project.id === "shift" ? (
+                    <span className="project-view-details project-view-details--status">
+                      Coming soon
+                    </span>
+                  ) : (
+                    <button className="project-view-details" onClick={() => setSelectedProjectId(project.id)} type="button">
+                      View details <ArrowUpRight aria-hidden="true" />
+                    </button>
+                  )}
                 </div>
 
                 <AnimatePresence initial={false}>

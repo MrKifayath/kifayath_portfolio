@@ -54,8 +54,18 @@ export function LandingSection({ active, onNavigate }: LandingSectionProps) {
             {landing.intro}
           </p>
 
+          <div className="hero-availability panel-reveal__item reveal-step-3">
+            <span className="hero-availability__tag">
+              <span className="hero-availability__dot" aria-hidden="true" />
+              Available now for Freelance
+            </span>
+            {/* <p className="hero-availability__copy">
+              Landing pages, admin dashboards, payment integrations, and bug-fix sprints.
+            </p> */}
+          </div>
+
           {/* CTA Buttons: View Projects, My Experience, and consistent Download Resume button */}
-          <div className="hero-cta-group panel-reveal__item reveal-step-3">
+          <div className="hero-cta-group panel-reveal__item reveal-step-4">
             <button
               className="hero-btn-primary"
               onClick={() => onNavigate(2)}
