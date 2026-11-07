@@ -28,7 +28,7 @@ export function ContactSection({ active }: ContactSectionProps) {
       <PanelReveal active={active} className="contact-content">
         <div className="section-heading-row contact-heading-row">
           <div>
-            <p className="section-eyebrow panel-reveal__item reveal-step-1">{contact.eyebrow}</p>
+            <p className="section-eyebrow contact-section-eyebrow panel-reveal__item reveal-step-1">{contact.eyebrow}</p>
             <h2
               className="contact-heading panel-reveal__item reveal-step-2"
               data-section-heading

@@ -1,6 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type FocusEvent } from "react";
 import { portfolioData, type PortfolioSectionId } from "@/src/data/portfolio";
 import {
@@ -383,6 +384,18 @@ export function PortfolioExperience() {
           ))}
         </div>
       </div>
+      <nav className="section-arrow-rail" aria-label="Section navigation">
+        {activeIndex > 0 ? (
+          <button aria-label={portfolioData.controls.previousSection} className="section-arrow-button section-arrow-button--previous" onClick={() => goToSection(activeIndex - 1)} type="button">
+            <ArrowLeft aria-hidden="true" />
+          </button>
+        ) : null}
+        {activeIndex < sectionCount - 1 ? (
+          <button aria-label={portfolioData.controls.nextSection} className="section-arrow-button section-arrow-button--next" onClick={() => goToSection(activeIndex + 1)} type="button">
+            <ArrowRight aria-hidden="true" />
+          </button>
+        ) : null}
+      </nav>
     </main>
   );
 }

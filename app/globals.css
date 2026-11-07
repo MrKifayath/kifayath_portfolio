@@ -44,8 +44,8 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-display: var(--font-plus-jakarta-sans);
-  --font-sans: var(--font-plus-jakarta-sans);
-  --font-mono: var(--font-dm-mono);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-dm-sans);
 }
 
 html:root[data-theme="dark"] {
@@ -107,7 +107,7 @@ html:root[data-theme="dark"] {
     margin: 0;
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-dm-sans), Arial, sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     transition: background-color 300ms ease, color 300ms ease;
   }
 
@@ -216,7 +216,7 @@ html:root[data-theme="dark"] {
 .site-wordmark {
   overflow: hidden;
   color: var(--foreground);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.075em;
@@ -231,13 +231,13 @@ html:root[data-theme="dark"] {
 
 .site-header__divider {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
 }
 
 .section-counter {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.08em;
@@ -296,7 +296,7 @@ html:root[data-theme="dark"] {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.025em;
   transition: color 180ms ease;
@@ -389,7 +389,7 @@ html:root[data-theme="dark"] {
   gap: 10px;
   margin: 0 0 24px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   letter-spacing: 0.065em;
   line-height: 1.5;
@@ -406,7 +406,7 @@ html:root[data-theme="dark"] {
 .hero-heading {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(4.35rem, 7.2vw, 7.8rem);
   font-weight: 400;
   letter-spacing: -0.055em;
@@ -514,7 +514,7 @@ html:root[data-theme="dark"] {
   gap: 8px 22px;
   margin-top: 24px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.025em;
 }
@@ -588,7 +588,7 @@ html:root[data-theme="dark"] {
 .section-heading {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(3.8rem, 6.7vw, 6.2rem);
   font-weight: 400;
   letter-spacing: -0.045em;
@@ -677,7 +677,7 @@ html:root[data-theme="dark"] {
 
 .career-timeline__date {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   line-height: 1.45;
 }
@@ -711,7 +711,7 @@ html:root[data-theme="dark"] {
 .career-detail__date {
   margin: 0 0 12px;
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
 }
@@ -719,7 +719,7 @@ html:root[data-theme="dark"] {
 .career-detail__lead h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(1.9rem, 3.3vw, 3rem);
   font-weight: 400;
   letter-spacing: -0.025em;
@@ -754,7 +754,7 @@ html:root[data-theme="dark"] {
   align-items: center;
   gap: 7px;
   color: var(--foreground);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   text-decoration: underline;
   text-decoration-color: var(--line);
@@ -811,7 +811,7 @@ html:root[data-theme="dark"] {
 
 .career-placeholder__label {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -843,7 +843,7 @@ html:root[data-theme="dark"] {
 .selected-work__heading h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2.7rem, 4vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -881,7 +881,7 @@ html:root[data-theme="dark"] {
 
 .project-entry__number {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   font-variant-numeric: tabular-nums;
 }
@@ -941,7 +941,7 @@ html:root[data-theme="dark"] {
 .project-detail-grid dt {
   margin-bottom: 8px;
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -961,7 +961,7 @@ html:root[data-theme="dark"] {
 
 .placeholder-link {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
 }
 
@@ -991,7 +991,7 @@ html:root[data-theme="dark"] {
 .skill-group h3 {
   margin: 0 0 13px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.055em;
@@ -1029,7 +1029,7 @@ html:root[data-theme="dark"] {
   max-width: 850px;
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(4rem, 7.4vw, 7.2rem);
   font-weight: 400;
   letter-spacing: -0.055em;
@@ -1061,7 +1061,7 @@ html:root[data-theme="dark"] {
 .contact-details__label {
   margin: 0 0 12px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1099,7 +1099,7 @@ html:root[data-theme="dark"] {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   text-transform: uppercase;
   transition: color 180ms ease;
@@ -1173,17 +1173,17 @@ html:root[data-theme="dark"] {
 .contact-form-panel__heading h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 2.4rem;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: 2rem;
   font-weight: 400;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .contact-form-panel__heading p {
   margin: 10px 0 0;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -1203,7 +1203,7 @@ html:root[data-theme="dark"] {
 
 .form-field label {
   color: var(--foreground);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -1215,8 +1215,8 @@ html:root[data-theme="dark"] {
   border-radius: 0;
   background: var(--background);
   color: var(--foreground);
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.45;
   transition: background-color 300ms ease, border-color 180ms ease;
 }
 
@@ -1252,8 +1252,8 @@ html:root[data-theme="dark"] {
 .form-field__error,
 .form-submit-error {
   color: var(--destructive);
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .form-submit-error {
@@ -1270,7 +1270,7 @@ html:root[data-theme="dark"] {
   max-width: 480px;
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2rem, 3.8vw, 3.25rem);
   font-weight: 400;
   line-height: 1.08;
@@ -1313,7 +1313,7 @@ html:root[data-theme="dark"] {
   padding-top: 17px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -1883,7 +1883,7 @@ body {
   padding: 0;
   cursor: pointer;
   color: var(--foreground);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -1898,7 +1898,7 @@ body {
 
 .site-header__divider {
   color: var(--line);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
 }
 
@@ -2029,7 +2029,7 @@ body {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.025em;
   transition: color 180ms ease;
@@ -2149,7 +2149,7 @@ body {
   gap: 10px;
   margin: 0 0 18px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.065em;
   line-height: 1.5;
@@ -2172,7 +2172,7 @@ body {
   margin: 6px 0 0;
   padding-top: 6px;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2.6rem, 5.8vw, 5.2rem);
   font-weight: 400;
   letter-spacing: -0.015em;
@@ -2297,7 +2297,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.02em;
@@ -2315,7 +2315,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   color: var(--muted);
   opacity: 0.85;
@@ -2383,7 +2383,7 @@ button:hover:not(:disabled) > svg {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   color: var(--muted);
 }
@@ -2484,7 +2484,7 @@ button:hover:not(:disabled) > svg {
 }
 
 .architecture-node__index {
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   color: var(--muted);
   opacity: 0.7;
@@ -2499,13 +2499,13 @@ button:hover:not(:disabled) > svg {
 }
 
 .architecture-node__role {
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   color: var(--muted);
 }
 
 .architecture-node__metric {
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   color: var(--accent);
   margin-top: 4px;
@@ -2564,7 +2564,7 @@ button:hover:not(:disabled) > svg {
 }
 
 .ledger-label {
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   color: var(--muted);
   text-transform: uppercase;
@@ -2579,7 +2579,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   color: var(--accent);
 }
@@ -2654,7 +2654,7 @@ button:hover:not(:disabled) > svg {
 .section-heading {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2.8rem, 5.2vw, 4.6rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -2705,7 +2705,7 @@ button:hover:not(:disabled) > svg {
 .career-card__location {
   margin: 0;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   letter-spacing: 0.025em;
   line-height: 1.5;
@@ -2719,7 +2719,7 @@ button:hover:not(:disabled) > svg {
 .career-card h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.015em;
@@ -2785,7 +2785,7 @@ button:hover:not(:disabled) > svg {
   align-items: center;
   gap: 6px;
   color: var(--foreground);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
 }
 
@@ -2800,7 +2800,7 @@ button:hover:not(:disabled) > svg {
   right: 5px;
   bottom: 8px;
   color: var(--line);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
 }
 
@@ -2846,7 +2846,7 @@ button:hover:not(:disabled) > svg {
 
 .project-entry__number {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   font-variant-numeric: tabular-nums;
 }
@@ -2907,7 +2907,7 @@ button:hover:not(:disabled) > svg {
 .project-detail-grid dt {
   margin-bottom: 5px;
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2938,7 +2938,7 @@ button:hover:not(:disabled) > svg {
   border: 0;
   background: transparent;
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
 }
 
@@ -2987,7 +2987,7 @@ button:hover:not(:disabled) > svg {
   padding: 5px 8px;
   border: 1px solid var(--line);
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2995,7 +2995,7 @@ button:hover:not(:disabled) > svg {
 
 .invoice-demo__header h2 {
   margin: 0;
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -3048,7 +3048,7 @@ button:hover:not(:disabled) > svg {
   padding-bottom: 13px;
   border-bottom: 1px solid var(--line);
   color: var(--accent);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   letter-spacing: 0.06em;
 }
@@ -3108,7 +3108,7 @@ button:hover:not(:disabled) > svg {
 
 .invoice-preview__table th {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
@@ -3152,7 +3152,7 @@ button:hover:not(:disabled) > svg {
 
 .invoice-recurring dt {
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -3206,7 +3206,7 @@ button:hover:not(:disabled) > svg {
 .skill-group h3 {
   margin: 0 0 8px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.055em;
@@ -3244,7 +3244,7 @@ button:hover:not(:disabled) > svg {
   max-width: 850px;
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2.8rem, 5.5vw, 4.8rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -3276,7 +3276,7 @@ button:hover:not(:disabled) > svg {
 .contact-details__label {
   margin: 0 0 10px;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -3309,7 +3309,7 @@ button:hover:not(:disabled) > svg {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 10px;
   text-transform: uppercase;
   transition: color 180ms ease;
@@ -3360,7 +3360,7 @@ button:hover:not(:disabled) > svg {
 .contact-form-panel__heading h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -3427,7 +3427,7 @@ button:hover:not(:disabled) > svg {
   max-width: 480px;
   margin: 0;
   color: var(--foreground);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
   font-size: clamp(2rem, 3.8vw, 3.25rem);
   font-weight: 400;
   line-height: 1.08;
@@ -3457,7 +3457,7 @@ button:hover:not(:disabled) > svg {
   padding-top: 13px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 9px;
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -3668,7 +3668,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   font-weight: 500;
   color: var(--accent);
@@ -3911,7 +3911,7 @@ button:hover:not(:disabled) > svg {
   background: transparent;
   border: 0;
   padding: 6px 4px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -3946,7 +3946,7 @@ button:hover:not(:disabled) > svg {
   gap: 5px;
   background: #d4f938;
   color: #070b08;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -4288,7 +4288,7 @@ button:hover:not(:disabled) > svg {
   border: 0;
   padding: 8px 12px;
   color: #7d9183;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -4309,7 +4309,7 @@ button:hover:not(:disabled) > svg {
 
 .minimal-scroll-cue__arrow {
   display: inline-block;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   color: #d4f938;
   animation: minimalArrowNudge 2.4s ease-in-out infinite;
@@ -4587,7 +4587,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   color: #d4f938;
   text-decoration: none;
@@ -4717,7 +4717,7 @@ button:hover:not(:disabled) > svg {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 11px;
   color: #d4f938;
   text-decoration: none;
@@ -4860,7 +4860,7 @@ button:hover:not(:disabled) > svg {
   justify-content: space-between;
   padding: 12px 14px;
   border-radius: 6px;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 13px;
   font-weight: 500;
   color: #c8d8cd;
@@ -4897,7 +4897,7 @@ button:hover:not(:disabled) > svg {
   background: rgba(18, 30, 24, 0.9);
   border: 1px solid rgba(212, 249, 56, 0.35);
   color: #f2f5f3;
-  font-family: var(--font-dm-mono), monospace;
+  font-family: var(--font-dm-sans), monospace;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -5259,7 +5259,7 @@ button:hover:not(:disabled) > svg {
 .experience-card__skills > p {
   margin: 0 0 12px;
   color: #8fa093;
-  font: 11px var(--font-dm-mono), monospace;
+  font: 11px var(--font-dm-sans), monospace;
   text-transform: uppercase;
   letter-spacing: .12em;
 }
@@ -5267,7 +5267,7 @@ button:hover:not(:disabled) > svg {
 .experience-card__skill-group h4 {
   margin: 0 0 8px;
   color: #d4f938;
-  font: 11px var(--font-dm-mono), monospace;
+  font: 11px var(--font-dm-sans), monospace;
   text-transform: uppercase;
   letter-spacing: .08em;
 }
@@ -5278,7 +5278,7 @@ button:hover:not(:disabled) > svg {
   background: #142019;
   color: #dce8df;
   padding: 6px 11px;
-  font: 12px var(--font-dm-mono), monospace;
+  font: 12px var(--font-dm-sans), monospace;
 }
 .experience-card-item:has(.experience-card__skills):hover .experience-card,
 .experience-card-item:has(.experience-card__skills):focus-within .experience-card {
@@ -5354,7 +5354,7 @@ button:hover:not(:disabled) > svg {
   border: 0;
   background: transparent;
   color: var(--accent);
-  font: 12px var(--font-dm-mono), monospace;
+  font: 12px var(--font-dm-sans), monospace;
   cursor: pointer;
 }
 .project-view-details svg { width: 14px; height: 14px; transition: transform 180ms ease; }
@@ -5376,15 +5376,15 @@ button:hover:not(:disabled) > svg {
 .project-details-dialog::backdrop { background: rgb(3 8 5 / 78%); backdrop-filter: blur(7px); }
 .project-details { position:absolute; inset:0 auto 0 0; width:min(820px,88vw); height:100%; overflow:auto; border-right:1px solid var(--line); padding:clamp(22px,4vw,48px); background:#09110d; box-shadow:0 30px 100px rgb(0 0 0 / 55%); animation:projectDrawerIn 620ms cubic-bezier(.16,1,.3,1) both; }
 .project-details__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
-.project-details__eyebrow { margin: 0 0 8px; color: var(--accent); font: 11px var(--font-dm-mono), monospace; letter-spacing: .12em; text-transform: uppercase; }
+.project-details__eyebrow { margin: 0 0 8px; color: var(--accent); font: 11px var(--font-dm-sans), monospace; letter-spacing: .12em; text-transform: uppercase; }
 .project-details__header h2 { margin: 0; font-size: clamp(26px, 4vw, 38px); letter-spacing: -.035em; }
 .project-details__summary { margin: 9px 0 0; color: var(--muted); font-size: 16px; }
-.project-details__meta { margin: 8px 0 0; color: var(--accent); font: 12px var(--font-dm-mono), monospace; }
+.project-details__meta { margin: 8px 0 0; color: var(--accent); font: 12px var(--font-dm-sans), monospace; }
 .project-details__close,.project-lightbox__close,.project-lightbox__arrow { display:grid; place-items:center; width:42px; height:42px; flex:0 0 auto; border:1px solid var(--line); border-radius:50%; background:#0c1711; color:var(--foreground); cursor:pointer; }
 .project-details__close svg,.project-lightbox button svg { width:18px; height:18px; }
 .project-details__tags { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 14px; }
-.project-details__tags span { padding:6px 11px; border:1px solid #29402f; border-radius:999px; color:#dce8df; background:#111c15; font:12px var(--font-dm-mono),monospace; }
-.project-details__visit { display:inline-flex; align-items:center; gap:6px; margin-bottom:24px; color:var(--accent); font:13px var(--font-dm-mono),monospace; }
+.project-details__tags span { padding:6px 11px; border:1px solid #29402f; border-radius:999px; color:#dce8df; background:#111c15; font:12px var(--font-dm-sans),monospace; }
+.project-details__visit { display:inline-flex; align-items:center; gap:6px; margin-bottom:24px; color:var(--accent); font:13px var(--font-dm-sans),monospace; }
 .project-details__visit svg { width:15px; height:15px; }
 .project-details__sections { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:14px 0 20px; }
 .project-details__stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:20px 0 24px; }
@@ -5399,8 +5399,8 @@ button:hover:not(:disabled) > svg {
 .project-details__screenshots-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
 .project-screenshot__image { position:relative; display:grid; place-items:center; width:100%; min-height:150px; overflow:hidden; border:1px solid var(--line); border-radius:8px; background:linear-gradient(135deg,#101d15,#09110d); color:#a4b2a8; cursor:zoom-in; }
 .project-screenshot__image img { display:block; width:100%; height:auto; max-height:340px; object-fit:cover; }
-.project-screenshot__placeholder { padding:38px 16px; font:12px var(--font-dm-mono),monospace; }
-.project-screenshot__badge { position:absolute; top:10px; left:10px; z-index:1; padding:5px 8px; border:1px solid #3d5729; border-radius:999px; background:#111b10; color:var(--accent); font:10px var(--font-dm-mono),monospace; }
+.project-screenshot__placeholder { padding:38px 16px; font:12px var(--font-dm-sans),monospace; }
+.project-screenshot__badge { position:absolute; top:10px; left:10px; z-index:1; padding:5px 8px; border:1px solid #3d5729; border-radius:999px; background:#111b10; color:var(--accent); font:10px var(--font-dm-sans),monospace; }
 .project-screenshot figcaption { margin-top:8px; color:var(--muted); font-size:13px; }
 .project-details__sections--generic { grid-template-columns:1fr; }
 .project-lightbox { width:min(94vw,1400px); max-width:none; max-height:94dvh; overflow:visible; border:0; padding:0; background:transparent; color:white; }
@@ -5427,4 +5427,99 @@ button:hover:not(:disabled) > svg {
 @media (max-width: 767px) {
   .contact-scroll { align-items: flex-start; }
   .contact-content { flex: 0 0 auto; margin: 0 auto; }
+}
+
+.section-arrow-rail {
+  position: fixed;
+  z-index: 35;
+  inset-inline: 0;
+  bottom: 84px;
+  height: 44px;
+  pointer-events: none;
+}
+.section-arrow-button {
+  position: absolute;
+  top: 0;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  color: var(--accent);
+  cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(12px);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+.section-arrow-button--previous { left: clamp(18px, 3vw, 40px); }
+.section-arrow-button--next { right: clamp(18px, 3vw, 40px); }
+.section-arrow-button svg { width: 19px; height: 19px; stroke-width: 1.8; animation: navArrowNudge 2.8s ease-in-out infinite; }
+.section-arrow-button:hover { transform: translateY(-3px) scale(1.04); background: var(--accent); color: var(--accent-foreground); border-color: var(--accent); box-shadow: 0 8px 26px rgb(212 249 56 / 18%); }
+.section-arrow-button:active { transform: translateY(-1px) scale(.97); }
+.section-arrow-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@keyframes navArrowNudge { 0%, 86%, 100% { transform: translateX(0); } 92% { transform: translateX(2px); } }
+@media (max-width: 767px) {
+  .section-arrow-rail { bottom: calc(58px + env(safe-area-inset-bottom)); }
+  .section-arrow-button--previous { left: 16px; }
+  .section-arrow-button--next { right: 16px; }
+  .section-arrow-button { width: 40px; height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-arrow-button, .section-arrow-button svg { animation: none; transition: none; }
+}
+
+/* Match Contact typography to the interior sections (Experience, Skills, Projects) */
+.contact-heading {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0;
+  color: #f2f5f3;
+}
+.contact-intro {
+  max-width: 640px;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #8fa093;
+  margin: 0;
+}
+.contact-heading-row .contact-intro { font-size: 16px; }
+.contact-content .portfolio-footer { font-size: 12px; line-height: 1.6; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-heading { font-size: 2.25rem; }
+}
+@media (max-width: 767px) {
+  .contact-heading { font-size: 1.85rem; }
+}
+.contact-section-eyebrow { 
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #d4f938;
+  font-weight: 600;
+}
+.contact-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1.15fr);
+  align-items: end;
+  gap: clamp(32px, 6vw, 84px);
+  margin-bottom: 32px;
+}
+.contact-heading-row > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-heading-row .contact-intro {
+  width: 100%;
+  max-width: 640px;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .contact-heading-row { grid-template-columns: 1fr; align-items: start; gap: 12px; }
+  .contact-heading-row .contact-intro { margin: 0; }
 }

@@ -214,7 +214,7 @@ export const portfolioData = {
     eyebrow: "04 / Contact",
     heading: "Let's build something.",
     intro:
-      "I'm looking for full-stack roles and freelance projects, especially where software meets physical hardware.",
+      "Open to full-stack roles and freelance projects. I want work where I can build, own and improve things.",
     email: "kifayatullah.mhmd@gmail.com",
     emailLabel: "Email",
     copyEmail: "Copy email",

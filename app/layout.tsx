@@ -1,6 +1,6 @@
 // Stripped @vercel/analytics per AI Studio platform requirements
 const Analytics = () => null;
-import { DM_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { portfolioData } from "@/src/data/portfolio";
 import "./globals.css";
@@ -9,14 +9,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
   weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
-const dmMono = DM_Mono({
-  weight: ["400", "500"],
+const dmSans = DM_Sans({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-dm-mono",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -58,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <body className={`${plusJakartaSans.variable} ${dmMono.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} ${dmSans.variable} antialiased`}>
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
