@@ -39,7 +39,25 @@ const ctaCardVariants = [
   { hover: { x: 6, y: -3, rotate: 3, scale: 1.03, transition: { ...ctaGrow, delay: 0.08 } } },
 ] as const;
 
-const editProjects = [
+type EditProject = {
+  id: string;
+  title: string;
+  subtitle: string;
+  format: string;
+  duration: string;
+  tag: string;
+  videoSrc: string;
+  posterSrc: string;
+  previewLabel: string;
+  source?: string;
+  idea?: string;
+  edit?: string;
+  builtWith?: string;
+  highlight?: string;
+  treatment: string;
+};
+
+const editProjects: EditProject[] = [
   {
     id: "hush",
     title: "HUSH Launch Edit",
@@ -125,7 +143,7 @@ const editProjects = [
     highlight: undefined,
     treatment: "three",
   },
-] as const;
+];
 
 // `custom` is the project index. The first project is already on screen when the modal opens,
 // so it waits for the panel to expand before revealing; the rest reveal as they're scrolled to.
