@@ -6460,10 +6460,34 @@ body:has(.video-portfolio-page) {
 .video-editing__contact .video-editing__eyebrow { justify-content: center; }
 .video-editing__contact h2 { margin-top: 14px; }
 .video-editing__contact > p:not(.video-editing__eyebrow) { margin: 14px 0 24px; color: var(--muted); font-size: 15px; }
-.video-editing__contact-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-bottom: 44px; }
+.video-editing__contact-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
 .video-editing__contact-actions .video-editing__button { margin-bottom: 0; }
+.video-editing__discord-link {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 auto 44px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  transition: transform 240ms cubic-bezier(.22, 1, .36, 1), border-color 240ms ease, background-color 240ms ease, color 240ms ease;
+}
+.video-editing__discord-link:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); background: color-mix(in srgb, var(--surface) 94%, var(--accent)); color: var(--foreground); }
+.video-editing__discord-link > svg:first-child { width: 18px; height: 18px; flex: none; fill: currentColor; }
+.video-editing__discord-link > svg:last-child { width: 14px; height: 14px; flex: none; color: var(--accent); transition: transform 200ms ease; }
+.video-editing__discord-link:hover > svg:last-child { transform: translate(2px, -2px); }
+.video-editing__discord-link strong { color: var(--accent); font: 600 9px/1.4 var(--font-dm-sans), sans-serif; letter-spacing: .02em; overflow-wrap: anywhere; }
 @media (max-width: 520px) {
   .video-editing__contact-actions { flex-direction: column; align-items: stretch; }
+  .video-editing__discord-link { gap: 7px; margin-bottom: 34px; padding: 9px 12px; font-size: 10px; }
+  .video-editing__discord-link strong { font-size: 8px; }
 }
 .video-editing__footer-line { display: flex; justify-content: space-between; gap: 20px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font: 600 9px/1.5 var(--font-dm-sans), sans-serif; letter-spacing: .1em; text-align: left; }
 .video-editing__footer-line a { transition: color 180ms ease; }
