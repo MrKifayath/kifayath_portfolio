@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, Download, MapPin, Menu, X } from "lucide-react";
 import { portfolioData } from "@/src/data/portfolio";
 
@@ -103,6 +104,9 @@ export function PortfolioChrome({
                 </button>
               );
             })}
+            <Link className="nav-tab-btn" href="/video-editing">
+              <span>VIDEO EDITING</span>
+            </Link>
           </nav>
 
           {/* Primary Contact CTA Button */}
@@ -174,6 +178,14 @@ export function PortfolioChrome({
                   </button>
                 );
               })}
+              <Link
+                className="mobile-nav-link"
+                href="/video-editing"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>05 · Video Editing</span>
+                <ArrowUpRight className="w-4 h-4 text-muted-foreground/60" aria-hidden="true" />
+              </Link>
             </nav>
 
             <div className="mobile-nav-footer">
